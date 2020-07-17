@@ -1,0 +1,255 @@
+.photo{
+  display: block;   
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  position: fixed;
+  bottom: 20px;
+  left: 15px;
+}
+
+.cover-info{
+  position: absolute;
+  left: 30px;
+  top:20px;
+}
+.cover-name{
+  font-size: 30px;
+  font-weight: bold;
+  display: block;
+  letter-spacing: 1px;
+}
+.cover-spell{
+  font-size: 20px;
+  /* font-weight: bold; */
+  /* display: block; */
+  letter-spacing: 1px;
+}
+
+.big-circle{
+  background-color: rgba(32, 134, 182, 0.7);
+  width: 260px;
+  height: 260px;
+  border-radius: 130px;
+  position: absolute;
+  left: -150px;
+  top: 110px;
+}
+
+.medium-circle{
+  background-color: rgba(32, 134, 182, 0.7);
+  width: 160px;
+  height: 160px;
+  border-radius: 80px;
+  position: absolute;
+  right: -80px;
+  top: 110px;
+}
+
+.small-circle{
+  background-color: rgba(32, 134, 182, 0.7);
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  position: absolute;
+  right: -50px;
+  bottom: -5px;
+}
+
+.cover-work{
+  position: absolute;
+  bottom: 150px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 20px 0;
+  width: 100%;
+}
+.cover-job{
+  display: block;
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;  
+}
+.cover-exp{
+  display: block;
+  color: #fff;
+  font-size: 20px;
+  /* font-weight: bold;   */
+}
+
+.navigation{
+  position: absolute;
+  top: 25px;
+  right: 10px;
+  font-size: 18px;
+}
+.arrow-right{
+  width: 20px;
+  height: 20px;
+  vertical-align: -5px;
+}
+
+.resume{
+  margin: 0 20px;
+}
+.section{
+  /* 为了保证每个章节之间有间隙,加上下内填充 */
+  padding-bottom: 30px;
+}
+.section-info{
+  display: flex;
+  /* 下边框线 */
+  border-bottom: 1px solid #333;
+  border-color: rgba(13, 47, 99, 0.9);
+  padding-bottom: 5px;
+  /* 给标题控件加上下外填充 */
+  margin: 10px 0;   
+}
+/* 方块文字 */
+.section-seq{
+  background-color: rgba(13, 47, 99, 0.9);
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  text-align: center;
+  line-height: 20px;
+  margin-right: 10px;
+  font-weight: bold;
+  margin-top: 3px;
+}
+.section-title{
+  font-size: 18px;
+}
+
+.column{
+  font-size: 14px;
+  border-bottom: dashed 1px #333;
+  /* 内填充实现行距高度 */
+  padding: 5px 0;
+}
+.col-2{
+  /* 多列布局属性 */
+  column-count: 2;
+}
+.col-1{
+  column-count: 1;
+}
+/* text标签默认是inline模型,会导致排版挤在一起,
+我们要给它改成block模型,才可以让让多列布局显示清楚*/
+.info{
+  display: block;
+}
+
+.skill{
+  padding: 5px 0;
+}
+.progress{
+  /* border-radius: 0.2rem;  */
+}
+.skill-name{
+  font-size: 14px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.education,.projectExp,.introduction{
+  border-bottom: dashed 1px #999;  /*下边框线*/
+  padding: 10px 0;  /*内填充控制每段教育经历间的间隔 */
+}
+/* 最后一段教育经历后没有下边框线 */
+.education:last-of-type{
+  border-bottom: none;
+}
+.introduction:last-of-type{
+  border-bottom: none;
+}
+.school,.company,.project-name{
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.icon-school,.icon-project-name{
+  width: 24px;
+  height: 24px;
+  vertical-align: -6px;
+  margin-right: 5px;
+}
+.row{
+  display: flex;
+  justify-content: space-between;
+}
+.info{
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.icon-book,.icon-job{
+  width: 16px;
+  height: 16px;
+  vertical-align: -2px;
+  margin-right: 3px;
+}
+.icon-calendar{
+  width: 16px;
+  height: 16px;
+  vertical-align: -2px; /*使水平方向对齐调整*/
+  margin-right: 4px;
+  padding-right: 3px;
+}
+.desc{
+  color: #999;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.page{
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  padding-bottom: 15px;
+}
+
+.info-skill{
+  display: block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: bold;  
+}
+.info-able{
+  display: block;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.section-info1{
+  display: flex;
+  /* 下边框线 */
+  border-bottom: 1px dashed #333;
+  padding-bottom: 5px;
+  /* 给标题控件加上下外填充 */
+  margin: 10px 0;   
+}
+/* 小方块文字 */
+.small-section-seq1{
+  background-color: rgba(32, 134, 182, 0.7);
+  width: 5px;
+  height: 5px;
+  color: #fff;
+  line-height: 20px;
+  margin-right: 10px;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+/* 小方块文字2*/
+.small-section-seq2{
+  background-color: rgba(32, 134, 182, 0.7);
+  width: 5px;
+  height: 5px;
+  color: #fff;
+  line-height: 20px;
+  margin-right: 10px;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+.section-title1{
+  font-size: 14px;
+}

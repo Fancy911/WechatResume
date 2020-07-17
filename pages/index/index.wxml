@@ -1,0 +1,207 @@
+<swiper style="height:{{height}}px">
+  <!-- 简历封面滑动控件 -->
+  <swiper-item>
+    <!-- 个人图片 -->
+    <image src="../../img/lzw.jpg" mode="widthFix" class="photo"></image>
+    <!-- 左上角姓名 -->
+    <view class="cover-info">
+      <text class="cover-name">{{name}}</text>
+      <text class="cover-spell">{{spell}}</text>
+    </view>
+    <!-- 绘制气泡 -->
+    <view class="big-circle"></view>
+    <view class="medium-circle"></view>
+    <view class="small-circle"></view>
+    <!-- 绘制腰封——求职岗位 -->
+    <view class="cover-work">
+      <text class="cover-job">{{job}}</text>
+      <text class="cover-exp">{{exp}}</text>
+    </view>
+    <!-- 提示我的简历翻页图标 -->
+    <view class="navigation">
+      我的简历
+      <image src="../../img/arrow-right.png" class="arrow-right"></image>
+    </view>
+  </swiper-item>
+
+  <!-- 基本信息/技能点/教育经历 -->
+  <swiper-item>
+    <!-- swiper页面本身没有滚动效果,所以需要加上scroll-view组件 -->
+    <!-- scroll-y="true" 使控件可以垂直滚动 -->
+    <scroll-view scroll-y="true" style="width:{{width}}px;height:{{height}}px">
+      <!-- 这个view标签是有左右的外填充,来让两边有一点点的空隙 -->
+      <view class="resume">
+        <!--第一个章节-->
+        <view class="section">
+          <!-- 章节标题 -->
+          <view class="section-info">
+            <!-- 章节序号和名称 -->
+            <view class="section-seq">1</view>
+            <text class="section-title">基本资料</text>
+          </view>
+          <!--col-2这个样式是多列布局,一行显示两列内容-->
+          <view class="column col-2">
+            <text class="info">姓名：{{name}}</text>
+            <text class="info">电话：{{tel}}</text>
+          </view>
+          <view class="column col-2">
+            <text class="info">性别：{{sex}}</text>
+            <text class="info">年龄：{{age}}</text>
+          </view>
+           <view class="column col-2">
+            <text class="info">民族：{{minzu}}</text>
+            <text class="info">政治面貌：{{zzMianMao}}</text>
+          </view>
+          <!--col-1 一行只显示一列内容-->
+          <view class="column col-1">
+            <text class="info">邮箱：{{email}}</text>
+          </view>
+          <view class="column col-1">
+            <text class="info">住址：{{address}}</text>
+          </view>
+        </view>
+        <!--第二个章节-->
+        <view class="section">
+          <!-- 章节标题 -->
+          <view class="section-info">
+            <!-- 章节序号和名称 -->
+            <view class="section-seq">2</view>
+            <text class="section-title">主要技能</text>
+          </view>
+          <view class="skill" wx:for="{{skill}}" wx:key="item">
+            <text class="skill-name">{{item.name}}</text>
+            <!-- 进度条控件  stroke-width 进度条控件厚度-->
+            <progress percent="{{item.percent}}" stroke-width="4" activeColor="rgba(32, 134, 182, 0.8)"></progress>
+          </view>
+        </view>
+        <!--第三个章节-->
+        <view class="section">
+          <!-- 章节标题 -->
+          <view class="section-info">
+            <!-- 章节序号和名称 -->
+            <view class="section-seq">3</view>
+            <text class="section-title">教育经历</text>
+          </view>
+          <!-- 用for循环去展示多段教育经历 -->
+          <view class="education" wx:for="{{education}}" wx:key="item">
+            <!-- 学校名字 -->
+            <view class="school">
+              <image src="../../img/icon_school.png" class="icon-school"></image>
+              <text>{{item.school}}</text>
+            </view>
+            <!-- 学习专业 -->
+            <view class="row">
+              <view class="info">
+                <image src="../../img/icon_book.png" class="icon-book"></image>
+                <text>{{item.major}}</text>
+              </view>
+              <view class="info">
+                <image src="../../img/icon_calendar.png" class="icon-calendar"></image>
+                <text>{{item.year}}</text>
+              </view>
+            </view>
+            <!-- 学历简介 -->
+            <rich-text class="desc">{{item.desc}}</rich-text>
+          </view>
+        </view>
+        <!-- 页码 -->
+        <text class="page">1/4</text>
+      </view>
+    </scroll-view>
+  </swiper-item>
+
+  <!-- 项目经历 -->
+  <swiper-item>
+    <scroll-view scroll-y="true" style="width:{{width}}px;height:{{height}}px">
+      <view class="resume">
+        <!--第四个章节-->
+        <view class="section">
+          <!-- 章节标题 -->
+          <view class="section-info">
+            <!-- 章节序号和名称 -->
+            <view class="section-seq">4</view>
+            <text class="section-title">项目经历</text>
+          </view>
+          <!-- 用for循环去展示多段教育经历 -->
+          <view class="projectExp" wx:for="{{projectExp}}" wx:key="item">
+            <!-- 项目名字 -->
+            <view class="project-name">
+              <image src="../../img/icon_computer.png" class="icon-project-name"></image>
+              <text>{{item.name}}</text>
+            </view>
+            <view class="row">
+              <!-- 担任工作 -->
+              <view class="info">
+                <image src="../../img/icon_job.png" class="icon-job"></image>
+                <text>{{item.job}}</text>
+              </view>
+              <!-- 项目时间 -->
+              <view class="info">
+                <image src="../../img/icon_calendar.png" class="icon-calendar"></image>
+                <text>{{item.date}}</text>
+              </view>
+            </view>
+            <!-- 学历简介 -->
+            <rich-text class="desc">{{item.major}}</rich-text>
+          </view>
+        </view>
+        <text class="page">2/3</text>
+      </view>
+    </scroll-view>
+  </swiper-item>
+
+  <!-- 技能荣誉/自我评价 -->
+  <swiper-item>
+    <scroll-view scroll-y="true" style="width:{{width}}px;height:{{height}}px">
+      <view class="resume">
+        <!--第五个章节-->
+        <view class="section">
+          <!-- 章节标题 -->
+          <view class="section-info">
+            <!-- 章节序号和名称 -->
+            <view class="section-seq">5</view>
+            <text class="section-title">技能&荣誉</text>
+          </view>
+          <!--col-2这个样式是多列布局,一行显示两列内容-->
+          <view class="column col-2">
+            <text class="info-skill">技能:</text>
+            <text class="info-skill">荣誉:</text>
+          </view>
+          <view class="section-info1 column col-2">
+            <view class="small-section-seq1"></view>
+            <text class="section-title1">英语：{{language}}</text>
+            <view class="small-section-seq2"></view>
+            <text class="info-able">20XX.09 XXXXXXXXXX</text>
+          </view>
+          <view class="section-info1 column col-2">
+            <view class="small-section-seq1"></view>
+            <text class="info-able">技能：{{otherSkill}}</text>
+            <view class="small-section-seq2"></view>
+            <text class="info-able">20XX.09 XXXXXXXXXX</text>
+          </view>
+           <view class="section-info1 column col-2">
+            <view class="small-section-seq1"></view>
+            <text class="info-able">特长：{{hobby}}</text>
+            <view class="small-section-seq2"></view>
+            <text class="info-able">20XX.09 XXXXXXXXXX</text>
+          </view>
+        </view>
+
+        <!--第六个章节-->
+        <view class="section">
+          <!-- 章节标题 -->
+          <view class="section-info">
+            <!-- 章节序号和名称 -->
+            <view class="section-seq">6</view>
+            <text class="section-title">自我评价</text>
+          </view>
+          <view class="introduction">
+            <rich-text class="desc">{{introduction}}</rich-text>
+          </view>
+        </view>
+        <!-- 页码 -->
+        <text class="page">3/3</text>
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>
